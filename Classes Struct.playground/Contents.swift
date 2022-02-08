@@ -1,30 +1,48 @@
+// Class
+class Person2 {
 
-//class Person {
-//
-//    var name = ""
-//
-//    func talk() {
-//        print("Make conversation")
-//    }
-//}
-//
-//var a = Person()
-//
-////Subclassing
-//class Comedian: Person {
-//    func sayHi() {
-//        print("Hi !")
-//    }
-//
-//    override func talk() {
-//        print("Make people laugh!")
-//        super.talk()
-//    }
-//}
-//
-//var c = Comedian()
-//c.talk()
-//c.sayHi()
+    var name = ""
+
+    func talk() {
+        print("Make conversation")
+    }
+}
+
+//Subclassing
+class Comedian: Person2 {
+    func sayHi() {
+        print("Hi!")
+    }
+
+    override func talk() {
+        print("Make people laugh!")
+        super.talk()
+    }
+}
+
+// Struct
+struct TalkShowHost {
+    var name = ""
+}
+
+// Test function
+func changeName(p:Comedian) {
+    p.name = "Kenny"
+}
+
+// Structures are "Value types"
+// Classes are "Referance types"
+
+var a = Comedian()
+a.name = "PoKai"
+
+var b = a
+b.name = "Elaine"
+
+changeName(p: a)
+
+print(a.name)
+print(b.name)
 
 // Challenge
 
@@ -60,12 +78,10 @@ class Astronaut: Person {
     }
 }
 
-for _ in 1...10 {
+for _ in 1...3 {
     
     let randomName = names[Int.random(in: 0...names.count-1)]
-    
     let randomNumber = Int.random(in: 1...3)
-    
     var person = Person()
     
     if randomNumber == 1 {
@@ -77,7 +93,6 @@ for _ in 1...10 {
     else if randomNumber == 3 {
         person = Astronaut()
     }
-    
     person.name = randomName
     person.introduceMyself()
 }
