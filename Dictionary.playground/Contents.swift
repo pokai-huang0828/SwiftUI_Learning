@@ -16,9 +16,9 @@ a["H123"] = nil
 var b = ["H123":"Kenny G", "H234":"Jimmy Yi"]
 
 // Iterating through a dictionary
-for kvp in b {
-    print("\nKey is: " + kvp.key)
-    print("Value is: " + kvp.value)
+for (key, value) in b {
+    print("\nKey is: " + key)
+    print("Value is: " + value)
 }
 
 
@@ -62,44 +62,83 @@ class Library {
     func searchByTitle(_ title:String) -> String {
         
         // TODO: This function searches the catalogue dictionary for a title
-        //
         // Returns "Available" if the book exists and isn't checked out
-        //
         // Returns "Checked out by name" if the book exists and is checked out
-        //
         // Returns "Not in catalogue" if the book doesn't exist
         
-        return ""
+        for (bookId, book) in catalogue {
+            if book.title == title {
+                
+                // Find the book, check if it is available
+                if checkedOutBooks[bookId] == nil {
+                    // Book hasn't been checked out
+                    return "Available"
+                }
+                else {
+                    let person = checkedOutBooks[bookId]
+                    return "Check out by " + (person?.name)!
+                }
+            }
+        }
+        return "Not in catalogue"
+    }
+    
+    func searchByAuthor(_ author:String) -> String {
+        
+        for (bookId, book) in catalogue {
+            if book.author == author {
+                
+                if checkedOutBooks[bookId] == nil {
+                    return "Available"
+                }
+                else {
+                    let person = checkedOutBooks[bookId]
+                    return "Checked out by " + (person?.name)!
+                }
+            }
+        }
+        return "Not in catalogue"
     }
     
     func checkOut(_ bookId:String, _ person:Person) -> String {
         
         // TODO: This function adds to the checkedOutBooks dictionary
-        //
         // Returns "Error: Book already checked out" if the book is already in the checkedOutBooks dictionary
-        //
         // Returns "Successfully checked out" and adds the bookId,person key-value pair if the book doesn't currently exist in the checkedOutbooks dictionary
-        //
         // Returns "Book doesn't exist" if the book isn't in the catalogue dictionary
         
-        return ""
+        if catalogue[bookId] == nil {
+            return "Book doesn't exist"
+        }
+        
+        if checkedOutBooks[bookId] != nil {
+            return "Error: Book already checked out"
+        }
+        else {
+            checkedOutBooks[bookId] = person
+            return "Successfully checked out"
+        }
     }
     
     func checkIn(_ bookId:String) -> String {
         
         // TODO: This function removes the bookId,person key-value pair from the checkedOutBooks dictionary
-        //
         // Returns "Book doesn't exist" if the book isn't in the catalogue dictionary
-        //
         // Returns "Error: Can't check in a book that hasn't been checked out" if the book wasn't checked out in the first place
-        //
         // Returns "Successfully checked in"
         
+        if catalogue[bookId] == nil {
+            return "Book doesn't exist"
+        }
         
-        
-        return ""
+        if checkedOutBooks[bookId] == nil {
+            return "Error: Can't check in a book that hasn't been checked out"
+        }
+        else {
+            checkedOutBooks[bookId] = nil
+            return "Successfully checked in"
+        }
     }
-    
 }
 // --- Your code goes above this line ---
 
@@ -109,7 +148,7 @@ let lib = Library()
 let borrower1 = Person("Curious George")
 let borrower2 = Person("Mark Twain")
 
-print("1)")
+print("\n1)")
 // George searches for a book
 // Expected Output in console:
 // "Available"
@@ -170,3 +209,10 @@ print("7)")
 print("Expected: Successfully checked out")
 let borrowResult3 = lib.checkOut("ORW", borrower2)
 print("Got:      \(borrowResult3) \n")
+
+
+print("8)")
+
+print("Expected: Check out by Curious George")
+let searchResul2t = lib.searchByAuthor("Ray Bradbury")
+print("Got:      \(searchResult2) \n")
