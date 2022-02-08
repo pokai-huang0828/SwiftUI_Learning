@@ -16,6 +16,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A08C28F927B2EABC002F85C4 /* data.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = data.json; sourceTree = "<group>"; };
 		A0E8FF8F27B0B51D00E14D5E /* mvvm-demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "mvvm-demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E8FF9227B0B51D00E14D5E /* mvvm_demoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = mvvm_demoApp.swift; sourceTree = "<group>"; };
 		A0E8FF9427B0B51D00E14D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +37,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A08C28F827B2EA3A002F85C4 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A08C28F927B2EABC002F85C4 /* data.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A0E8FF8627B0B51D00E14D5E = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +68,7 @@
 				A0E8FFA227B0B54300E14D5E /* ViewModels */,
 				A0E8FFA127B0B53C00E14D5E /* Models */,
 				A0E8FFA027B0B53300E14D5E /* Views */,
+				A08C28F827B2EA3A002F85C4 /* Data */,
 				A0E8FF9627B0B51E00E14D5E /* Assets.xcassets */,
 				A0E8FF9827B0B51E00E14D5E /* Preview Content */,
 			);

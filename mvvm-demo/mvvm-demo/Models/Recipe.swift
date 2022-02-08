@@ -7,9 +7,9 @@
 
 import Foundation
 
-struct Recipe: Identifiable {
+struct Recipe: Identifiable, Decodable {
     
-    var id = UUID()
+    var id:UUID?
     var name = ""
     var cuisine = ""
     

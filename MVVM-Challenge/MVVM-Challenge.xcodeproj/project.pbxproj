@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		A073CA7D27B2EE0A00025A97 /* a.json in Resources */ = {isa = PBXBuildFile; fileRef = A073CA7C27B2EE0A00025A97 /* a.json */; };
 		A0E8FFB427B1E3F700E14D5E /* MVVM_ChallengeApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8FFB327B1E3F700E14D5E /* MVVM_ChallengeApp.swift */; };
 		A0E8FFB627B1E3F700E14D5E /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = A0E8FFB527B1E3F700E14D5E /* ContentView.swift */; };
 		A0E8FFB827B1E3F800E14D5E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = A0E8FFB727B1E3F800E14D5E /* Assets.xcassets */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		A073CA7C27B2EE0A00025A97 /* a.json */ = {isa = PBXFileReference; lastKnownFileType = text.json; path = a.json; sourceTree = "<group>"; };
 		A0E8FFB027B1E3F700E14D5E /* MVVM-Challenge.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "MVVM-Challenge.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		A0E8FFB327B1E3F700E14D5E /* MVVM_ChallengeApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MVVM_ChallengeApp.swift; sourceTree = "<group>"; };
 		A0E8FFB527B1E3F700E14D5E /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -36,6 +38,14 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		A073CA7B27B2EDCF00025A97 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				A073CA7C27B2EE0A00025A97 /* a.json */,
+			);
+			path = Data;
+			sourceTree = "<group>";
+		};
 		A0E8FFA727B1E3F700E14D5E = {
 			isa = PBXGroup;
 			children = (
@@ -59,6 +69,7 @@
 				A0E8FFC127B1E5A100E14D5E /* ViewModels */,
 				A0E8FFC327B1E5D200E14D5E /* Models */,
 				A0E8FFC227B1E5CB00E14D5E /* Views */,
+				A073CA7B27B2EDCF00025A97 /* Data */,
 				A0E8FFB727B1E3F800E14D5E /* Assets.xcassets */,
 				A0E8FFB927B1E3F800E14D5E /* Preview Content */,
 			);
@@ -156,6 +167,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				A0E8FFBB27B1E3F800E14D5E /* Preview Assets.xcassets in Resources */,
+				A073CA7D27B2EE0A00025A97 /* a.json in Resources */,
 				A0E8FFB827B1E3F800E14D5E /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
