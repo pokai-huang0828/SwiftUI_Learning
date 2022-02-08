@@ -13,5 +13,4 @@ struct Recipe: Identifiable {
     var name = ""
     var cuisine = ""
     
-    
 }

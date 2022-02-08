@@ -9,26 +9,24 @@ import SwiftUI
 
 struct ContentView: View {
     
-    var model = RecipeModel()
+    @ObservedObject var model = RecipeModel()
     
     var body: some View {
         
-        List(model.recipes) { r in
-            
-            VStack(alignment: .leading, spacing: 3.0){
-                Text(r.name)
-                    .font(.title)
-                Text(r.cuisine)
-                    
-                    
-                    
-                    
-                    
-                    
+        VStack {
+            List(model.recipes) { r in
+                
+                VStack(alignment: .leading, spacing: 3.0){
+                    Text(r.name)
+                        .font(.title)
+                    Text(r.cuisine)
+                }
             }
-            
+            Button("Add Recipe",
+                   action: {
+                model.addRecipe()
+            })
         }
-        
     }
 }
 

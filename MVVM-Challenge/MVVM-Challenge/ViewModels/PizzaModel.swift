@@ -7,9 +7,9 @@
 
 import Foundation
 
-class PizzaModel {
+class PizzaModel: ObservableObject {
     
-    var pizzas = [Pizza]()
+    @Published var pizzas = [Pizza]()
     
     init() {
         
@@ -38,6 +38,18 @@ class PizzaModel {
         pizza3.topping3 = "Pineapple"
                 
         pizzas.append(pizza3)
+        
+    }
+    
+    func addPineapple() {
+        for i in 0..<pizzas.count {
+            pizzas[i].topping1 = "Pineapple"
+        }
+        print("Added pineapples")
+        
+        for j in 0..<pizzas.count {
+            print(pizzas[j].topping1)
+        }
         
     }
     
