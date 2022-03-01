@@ -7,7 +7,7 @@
 
 import Foundation
 
-struct Recipe: Identifiable, Decodable {
+struct Recipe: Identifiable /*Decodable*/ {
     
     var id:UUID?
     var name = ""
